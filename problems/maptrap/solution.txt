@@ -1,0 +1,7 @@
+NICE! here was my solution:
+
+  function square (x) { return x*x }
+
+  module.exports = function (stream) {
+      return stream.map(square)
+  }
