@@ -1,7 +1,27 @@
-# example-adventure
+# stream adventure
 
-This package is an example that you can use to get started writing
-[nodeschool](http://nodeschool.io) challenges using
-[adventure](https://npmjs.org/package/adventure).
+Go on an educational FRP (functional-reactive progrmming) adventure!
 
-Just fork this repo to start building your very own nodeschool adventure!
+travisbuild status
+
+# install
+
+First install [node](http://nodejs.org) version 0.10 or later.
+
+Once you've installed `node`, you will have an `npm` command.
+
+With [npm](https://npmjs.org) do:
+
+```
+npm install -g frp-adventure
+```
+
+If you want to play offline, make a new directory then do:
+
+```
+npm install [all packages]
+```
+
+# run
+
+Now just type `frp-adventure` to play!
