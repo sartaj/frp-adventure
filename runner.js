@@ -3,7 +3,7 @@
 var adventure = require('adventure');
 var shop = adventure('example-adventure');
 
-var problems = [ 'maptrap', 'primetime' ];
+var problems = [ 'maptrap', 'primetime', 'rookie-cookie' ];
 problems.forEach(function (prob) {
     shop.add(prob, function () { return require('./problems/' + prob) });
 });

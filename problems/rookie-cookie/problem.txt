@@ -1,0 +1,28 @@
+the ICFS (International Cookie Friendship Society) is a nationwide initiative.
+
+thousands of volunteers from around the globe bake cookies. 
+
+given that this effort is massively distributed, and done mostly in volunteers' free time, we have no idea when a new batch will be released.
+
+the way the system works is: whenever someone releases a new batch of cookies, they emit a JSON announcement over a shared channel. announcements look slike this:
+
+  {
+    "baker": "gsussman",
+    "type": "gingerbread",
+    "deliciousness": 7
+  }
+
+
+you will be given a stream of cookie announcements:
+
+-----c----c-----c-----------c-----c-c----------c-----
+
+where each c is a JSON string
+
+filter this stream so that it only includes cookies whose deliciousness is > 6. return a stream of strings describing the delicious cookies.
+
+strings should be of the form "gsussman's gingerbread cookies are delicous."
+
+hint: start by parsing the JSON:
+
+  stream.map(JSON.parse)
