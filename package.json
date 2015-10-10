@@ -15,6 +15,9 @@
   "dependencies": {
     "adventure": "^2.2.0",
     "adventure-verify": "^2.1.1",
-    "kefir": "^3.0.0"
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "kefir": "^3.0.0",
+    "lodash": "^3.10.1"
   }
 }
