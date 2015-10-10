@@ -1,0 +1,15 @@
+
+I can make a ............
+
+  var keystream  = Kefir.fromEvents($(document.body), 'click')
+
+  function targetID (ev) {
+    return ev.target.id
+  }
+
+  return clickStream.map(targetID).map(selection)
+
+
+Then, after some clicking, I'll see a stream that looks like this:
+
+  ---1-----7--19--20-------X

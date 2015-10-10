@@ -1,0 +1,9 @@
+NICE! here was my solution:
+
+  function deliciousness (batch) {
+    return batch.deliciousness
+  }
+
+  module.exports = function (batches) {
+    return batches.map(deliciousness)
+  }

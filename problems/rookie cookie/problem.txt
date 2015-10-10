@@ -1,0 +1,34 @@
+Kefir streams expose a function called `map`. 
+
+If I have a stream like this:
+
+  --1--2---3--4--5--6---X
+
+I can use `map` to double every element that comes through the stream:
+
+  module.exports = function (stream) { 
+
+    function double (x) { return x*2 }
+      
+    return stream.map(double)
+  }
+
+Then I'll get this stream:
+
+  --2--4---6--8--10-12---X
+
+
+
+
+
+Export a function that takes a stream and returns a stream (like the above 
+example), except, rather than halving allelements that come through 
+the stream, square them. 
+
+Save that code into a file, YOUR_PROGRAM.js (you can name it whatever you like)
+and then:
+
+  Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
+  Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.
+
+Don't overthink this.

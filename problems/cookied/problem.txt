@@ -1,0 +1,34 @@
+Kefir streams expose a function called `filter`. 
+
+If I have a stream like this:
+
+  --1--2---3--4--5--6---X
+
+I can use `filter` to get only the odd elements
+
+  module.exports = function (stream) { 
+
+    function odds (x) { if (x % 2 !== 0) return x }
+      
+    return stream.filter(odds)
+  }
+
+Then I'll get this stream:
+
+  --1------3-----5------X
+
+
+
+
+
+Export a function that takes a stream and returns a stream (like the above 
+example), except, rather than halving allelements that come through 
+the stream, square them. 
+
+Save that code into a file, YOUR_PROGRAM.js (you can name it whatever you like)
+and then:
+
+  Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
+  Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.
+
+Don't overthink this.

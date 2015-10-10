@@ -1,0 +1,15 @@
+NICE! here was my solution:
+
+  function delicious (cookies) {
+    if (cookies.deliciousness > 6) 
+      return cookies
+  }
+
+  var deliciousnessAlert = function (c) {
+    return c.baker + "'s " + c.type + " cookies are delicious."
+  }
+
+  module.exports = function (batch) {
+    return batch.filter(delicious)
+          .map(deliciousnessAlert)
+  }
