@@ -12,7 +12,7 @@ exports.solution = fs.createReadStream(__dirname + '/solution.txt');
 var messages = [
   { baker: 'elsehow', flavor: 'triple choco dilemma', deliciousness: 7 }
     , { baker: 'substack', flavor: 'oatmeal', deliciousness: 3 }
-    , { baker: 'mminsky', flavor: 'fig', deliciousness: 9 }
+    , { baker: 'ghopper', flavor: 'fig', deliciousness: 9 }
     , { baker: 'gsussman', flavor: 'gingerbread supreme', deliciousness: 8 }
     , { baker: 'rpominov', flavor: 'salt-n-toffee gladiator', deliciousness: 9 }
     , { baker: 'rhickey', flavor: 'bartok special', deliciousness: 5 }
@@ -23,10 +23,11 @@ exports.verify = verify({ modeReset: true }, function (args, t) {
     var f = require(path.resolve(args[0]));
     // test stream outputs
     var test_i = 0
+    var url = 'http://localhost:8888'
     var answers = [
         {action: 'praise', baker: 'elsehow'}
         , {action: 'scold', baker: 'substack'}
-        , {action: 'praise', baker: 'mminsky'}
+        , {action: 'praise', baker: 'ghopper'}
         , {action: 'praise', baker: 'gsussman'}
         , {action: 'praise', baker: 'rpominov'}
         , {action: 'scold', baker: 'rhickey'}
@@ -41,7 +42,7 @@ exports.verify = verify({ modeReset: true }, function (args, t) {
         }
     })
     setTimeout(function () {
-      f(Kefir.sequentially(1, messages))
+      f(Kefir.sequentially(1, messages), url)
     }, 150)
 });
 app.listen(8888)

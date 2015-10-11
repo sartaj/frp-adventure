@@ -5,5 +5,10 @@ NICE! here was my solution:
   }
 
   module.exports = function (batches) {
-    return batches.map(deliciousness)
+    return batches.map(JSON.parse).map(deliciousness)
   }
+
+
+CRYPTIC KOAN 
+
+Streams are a way of reasoning about the many values a variable takes on throughout the course of a program. The same way a channel lets us reason about many individual transmissions, or a river lets us reason about many individual water molecules. It allows us to see a sequence of events at a different level of granularity, so that we can more easily talk about processes a number of atomic elements.

@@ -1,1 +1,5 @@
 NICE! here was my solution:
+
+CRYPTIC KOAN
+
+Think of `onValue` as the business end of a hose. It represents the point where our values leave our stream, where we send them off to act on the outside world.

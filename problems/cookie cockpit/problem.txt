@@ -1,15 +1,55 @@
 
-I can make a ............
+Let's say we have two streams: a stream of button presses, and a stream of messages.
 
-  var keystream  = Kefir.fromEvents($(document.body), 'click')
+I want to highlight a message every time a press the button, I can do:
+
+  var highlighted = messages.sampledBy(buttonPresses).
+
+e.g., 
+
+  messages       -----a-b-c---X
+  buttonPresses  -x-x--x----x-X
+  highlighted    ------a----c-X
+
+* * * 
+
+Personally, I have several thoussand ovens, all of which are, um, baking batches of cookies on their own.
+
+I have a sort of, well, a sort of cockpit I sit in, where I monitor all of my ovens. 
+
+In HTML, I have a div for every oven. The ID of the div is the ID of the oven.
+
+I want to click each oven div in order to select that oven. 
+
+I can make a stream of selected ovens from my jquery click events:
+
+  var clickStream = Kefir.fromEvents($(document.body), 'click')
 
   function targetID (ev) {
     return ev.target.id
   }
 
-  return clickStream.map(targetID).map(selection)
+  clickStream.map(targetID).map(selection)
 
 
-Then, after some clicking, I'll see a stream that looks like this:
+After a bit of clicking, I'll see a stream that looks like this:
 
   ---1-----7--19--20-------X
+
+ I also have two buttons, a harvest button (sends a robot to collect a batch) and a reset button (tells the oven to start its operation over with a new, algorithmically generated cookie recipe).
+
+
+ I will give you three streams: a stream of oven selections, a stream of clicks on the harvest button, and a stream of clicks on the reset button.
+
+   module.exports = function (ovenSelections, harvestClicks, resetClicks) {
+     // ..
+   }
+
+ Clicking either button will emit a message relating to the currently selected oven:
+
+    { action: 'harvest', id: 91 }
+
+ Where `action` is either 'harvest' or 'reset'.
+ 
+  Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
+  Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.

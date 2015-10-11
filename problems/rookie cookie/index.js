@@ -9,7 +9,7 @@ exports.solution = fs.createReadStream(__dirname + '/solution.txt');
 var messages = [
   { baker: 'elsehow', flavor: 'triple choco dilemma', deliciousness: 7 }
     , { baker: 'substack', flavor: 'oatmeal', deliciousness: 3 }
-    , { baker: 'mminsky', flavor: 'fig', deliciousness: 9 }
+    , { baker: 'ghopper', flavor: 'fig', deliciousness: 9 }
     , { baker: 'gsussman', flavor: 'gingerbread supreme', deliciousness: 8 }
     , { baker: 'rpominov', flavor: 'salt-n-toffee gladiator', deliciousness: 9 }
     , { baker: 'rhickey', flavor: 'bartok special', deliciousness: 5 }

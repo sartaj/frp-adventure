@@ -1,34 +1,57 @@
-Kefir streams expose a function called `filter`. 
 
-If I have a stream like this:
+We can chain `map`s and `filter`s to perform a sequence of operations to values in a stream:
 
-  --1--2---3--4--5--6---X
+  var possibleKeys = numbers.filter(isPrime)
+                            .filter(largeInteger)
+                            .map(hashWithMessage)
 
-I can use `filter` to get only the odd elements
+  var correctKeys = possibleKeys.filter(successfullyDecodesMessage)
 
-  module.exports = function (stream) { 
+But, after everything, how do we do things to the resulting values?
 
-    function odds (x) { if (x % 2 !== 0) return x }
-      
-    return stream.filter(odds)
-  }
+We use `onValue` to define "side-effects" - functions executed at the endpoints of our processing chains, which return nothing.
 
-Then I'll get this stream:
+   correctKeys.onValue(playAlertSound)
 
-  --1------3-----5------X
+*  *  *
 
+Our cookie setup is a bit more elaborate than I initially made it out to be.
 
+We are actually members of the ICFS (International Cookie Frienship Society).
 
+Through a massively distributed effort, we bake cookies in parallel, and share news of our batches over our shared channel.
 
+Our operation is quite large. Cookies are announced far too quickly for any human to deal with.
 
-Export a function that takes a stream and returns a stream (like the above 
-example), except, rather than halving allelements that come through 
-the stream, square them. 
+Why don't you write a cookie daemon (cookied) that processes these requests for you?
 
-Save that code into a file, YOUR_PROGRAM.js (you can name it whatever you like)
-and then:
+For every batch of cookies with a deliciousness < 6, make a message of the form:
+
+  { action: 'praise'
+   , baker: 'gsussman'}
+
+For every batch with a deliciousness >= 6, make a message of the form:
+
+  { action: 'scold'
+   , baker: 'gsussman'}
+
+Make a POST request of praise/scold messages to `url`.
+
+I recommend the npm module post-json for this
+
+   npm install post-json
+
+Usage:
+
+   var post = require('post-json') 
+   post(url, data)
+
+Again, I will give you a stream of cookie announcements, and the URL of the server:
+
+   module.exports = function (stream, url) {  
+    // ..
+   }
 
   Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
   Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.
 
-Don't overthink this.
