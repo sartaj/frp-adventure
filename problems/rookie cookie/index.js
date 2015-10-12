@@ -4,7 +4,7 @@ var verify = require('adventure-verify')
 var Kefir = require('kefir')
 
 exports.problem = fs.createReadStream(__dirname + '/problem.txt');
-exports.solution = fs.createReadStream(__dirname + '/solution.txt');
+exports.solution = fs.createReadStream(__dirname + '/solution.js');
 
 var messages = [
   { baker: 'elsehow', flavor: 'triple choco dilemma', deliciousness: 7 }

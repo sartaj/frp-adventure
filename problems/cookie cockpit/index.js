@@ -4,11 +4,11 @@ var verify = require('adventure-verify')
 var Kefir = require('kefir')
 
 exports.problem = fs.createReadStream(__dirname + '/problem.txt');
-exports.solution = fs.createReadStream(__dirname + '/solution.txt');
+exports.solution = fs.createReadStream(__dirname + '/solution.js');
 
-var selections = Kefir.sequentially(500, [11, 12, 28, 13, 42, 48])
-var resetClicks = Kefir.sequentially(1200, [1, 1])
-var harvestClicks = Kefir.sequentially(1800, [1, 1])
+var selections = Kefir.sequentially(250, [11, 12, 28, 13, 42, 48])
+var resetClicks = Kefir.sequentially(600, [1, 1])
+var harvestClicks = Kefir.sequentially(900, [1, 1])
 
 var answers = [
     { action: 'reset', id: 12 }
