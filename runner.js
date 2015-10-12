@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var adventure = require('adventure');
-var shop = adventure('example-adventure');
+var shop = adventure('frp-adventure');
 
 var problems = require('./problemList.js')
 problems.forEach(function (prob) {

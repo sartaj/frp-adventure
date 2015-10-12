@@ -2,7 +2,7 @@
 
 Go on an educational FRP (functional-reactive progrmming) adventure!
 
-travisbuild status
+<!-- travisbuild status -->
 
 # install
 
@@ -14,12 +14,6 @@ With [npm](https://npmjs.org) do:
 
 ```
 npm install -g frp-adventure
-```
-
-If you want to play offline, make a new directory then do:
-
-```
-npm install [all packages]
 ```
 
 # run
