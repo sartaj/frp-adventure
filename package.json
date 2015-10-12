@@ -1,6 +1,6 @@
 {
   "name": "frp-adventure",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "example of using adventure to make nodeschool challenges",
   "scripts": {
     "test": "node test/test.js"
@@ -13,6 +13,7 @@
   "keywords": [
     "nodeschool",
     "adventure",
+    "frp",
     "education"
   ],
   "dependencies": {
