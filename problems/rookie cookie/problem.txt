@@ -37,5 +37,5 @@ You can pass your stream like this:
     stream.map(somethingToMapThrough)
   }
   
-Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
-Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.
+  Use `$ADVENTURE_COMMAND verify YOUR_PROGRAM.js` to verify your program.
+  Use `$ADVENTURE_COMMAND run YOUR_PROGRAM.js` to run your program.
