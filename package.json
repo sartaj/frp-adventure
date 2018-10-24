@@ -3,7 +3,9 @@
   "version": "1.0.3",
   "description": "example of using adventure to make nodeschool challenges",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "frp-adventure": "runner.js"
@@ -23,6 +25,8 @@
     "express": "^4.13.3",
     "kefir": "^3.0.0",
     "kefir-child-process": "^1.0.0",
-    "lodash": "^3.10.1"
-  }
+    "lodash": "^3.10.1",
+    "snyk": "^1.104.2"
+  },
+  "snyk": true
 }
